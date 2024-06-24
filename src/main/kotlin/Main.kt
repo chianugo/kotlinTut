@@ -1,9 +1,9 @@
 package com.chianugo
 
-fun sayHello() {
-    println("Hello Kotlin")
+fun dayOfWeek() {
+    println("What day is it today?")
 }
+fun main(args: Array<String>) {
+    dayOfWeek()
 
-fun main() {
-    
 }
