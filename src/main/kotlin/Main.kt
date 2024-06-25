@@ -2,7 +2,8 @@ package com.chianugo
 import java.util.*
 fun main(args: Array<String>) {
     println("Hello")
-    feedTheFish()
+//    feedTheFish()
+    getFortuneCookie()
 }
 
 fun feedTheFish() {
@@ -29,4 +30,16 @@ fun fishFood(day: String): String {
         else -> "fasting"
     }
 
+}
+
+fun getFortuneCookie():String {
+    val fortunes = listOf("You will have a great day!", "Things will go well for you today.", "Enjoy a wonderful day of success.", "Be humble and all will turn out well.", "Today is a good day for exercising restraint.", "Take it easy and enjoy life!", "Treasure your friends because they are your greatest fortune.")
+    val fortune:String = fortunes[getBirthday()?.rem(fortunes.size) ?: 0]
+    return fortune
+}
+
+fun getBirthday(): Int? {
+    println("What day of the year is your birthday? (0-366)")
+    val birthday = readlnOrNull()?.toIntOrNull()
+    return birthday
 }
