@@ -8,5 +8,6 @@ fun buildAquarium() {
     val myAquarium = Aquarium()
     myAquarium.height = 80
 
-    println("Length: ${myAquarium.length} " + "Width: ${myAquarium.width} " + "Height: ${myAquarium.height}")
+    println("Length: ${myAquarium.length} cm " + "Width: ${myAquarium.width} cm " + "Height: ${myAquarium.height} cm")
+    println("Volume: ${myAquarium.volume} liters")
 }
