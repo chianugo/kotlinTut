@@ -1,9 +1,14 @@
 package com.chianugo
 import java.util.*
 fun main(args: Array<String>) {
-    println("Hello")
+//    println("Hello")
 //    feedTheFish()
-    getFortuneCookie()
+//    getFortuneCookie()
+//    println(fitMoreFish(10.0, currentFish = listOf(1,2,3,4,5), 5, true ))
+    println(fitMoreFish(10.0, listOf(3,3,3)))
+    println(fitMoreFish(8.0, listOf(2,2,2), hasDecorations = false))
+    println(fitMoreFish(9.0, listOf(1,1,3), 3))
+    println(fitMoreFish(10.0, listOf(), 7, true))
 }
 
 fun feedTheFish() {
@@ -22,7 +27,7 @@ fun fishFood(day: String): String {
     return when (day) {
         "Monday" ->"flakes"
         "Tuesday" -> "pellets"
-        "Wednesday" -> "redworms"
+        "Wednesday" -> "red worms"
         "Thursday" -> "granules"
         "Friday" -> "mosquitoes"
         "Saturday" -> "lettuce"
@@ -42,4 +47,19 @@ fun getBirthday(): Int? {
     println("What day of the year is your birthday? (0-366)")
     val birthday = readlnOrNull()?.toIntOrNull()
     return birthday
+}
+
+fun fitMoreFish(tankSize:Double , currentFish:List<Int>, fishSize:Int = 2, hasDecorations:Boolean = true):Boolean {
+
+    var totalLengthOfFish: Int = 0
+    for (element in currentFish) {
+        totalLengthOfFish += element
+    }
+    var hasDecorations = hasDecorations
+    var tankSize = tankSize
+    if (hasDecorations) {
+        tankSize = tankSize * 0.8
+    }
+    return (tankSize - totalLengthOfFish - fishSize) >= 0
+
 }
